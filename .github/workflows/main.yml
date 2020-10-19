@@ -86,6 +86,10 @@ jobs:
     - name: execute
       run: python full_experiment.py ${{github.event.issue.title}}
 
+    - name: dir component_importance_data
+      run: cmd /c "dir /b /s"
+      working-directory: component_importance_data
+
     - name: Upload repository_data
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
