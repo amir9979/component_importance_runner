@@ -74,6 +74,7 @@ jobs:
         pip install numpy
         pip install sklearn
         pip install pandas
+        pip install pyswarm
 
     - name: javadiff_install
       run: python ./javadiff/setup.py install
