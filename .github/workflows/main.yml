@@ -75,6 +75,7 @@ jobs:
         pip install sklearn
         pip install pandas
         pip install pyswarm
+        pip install networkx
 
     - name: javadiff_install
       run: python ./javadiff/setup.py install
