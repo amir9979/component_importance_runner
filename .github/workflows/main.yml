@@ -29,6 +29,8 @@ jobs:
       with:
         java-version: 1.8
 
+    - name: longpaths
+      run: git config --system core.longpaths true
     
     - name: Checkout repository_mining
       uses: actions/checkout@v2
@@ -72,9 +74,6 @@ jobs:
 
     - name: javadiff_install
       run: python ./javadiff/setup.py install
-
-    - name: longpaths
-      run: git config --system core.longpaths true
 
     - name: dir all
       run: cmd /c "dir /b /s"
