@@ -91,14 +91,26 @@ jobs:
       run: cmd /c "dir /b /s"
       working-directory: component_importance_data
 
-    - name: Upload repository_data
+    - name: Upload matrices
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
-        # Artifact name
-        name: repository_data
-        # A file, directory or wildcard pattern that describes what to upload
-        path: repository_data
+        name: matrices
+        path: component_importance_data\DBCP\matrices
+
+    - name: Upload traces_json
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: traces_json
+        path: component_importance_data\DBCP\traces_json
+
+    - name: Upload mvn_outputs
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: mvn_outputs
+        path: component_importance_data\DBCP\mvn_outputs
 
     - name: create zip
       shell: python
