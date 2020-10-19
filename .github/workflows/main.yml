@@ -59,6 +59,7 @@ jobs:
         repository: rotba/mvnpy
         path: ./mvnpy
         fetch-depth: 0
+        ref: miner_merge
 
     - name: Install dependencies
       run: |
