@@ -63,7 +63,7 @@ jobs:
       run: git config --system core.longpaths true
 
     - name: dir all
-      run: dir /b /s
+      run: cmd /c "dir /b /s"
 
     - name: execute
       run: python full_experiment.py ${{github.event.issue.title}}
