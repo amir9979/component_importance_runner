@@ -87,6 +87,7 @@ jobs:
       run: python full_experiment.py ${{github.event.issue.title}}
 
     - name: dir component_importance_data
+      if: ${{ always() }}
       run: cmd /c "dir /b /s"
       working-directory: component_importance_data
 
