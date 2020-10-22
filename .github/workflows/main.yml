@@ -113,6 +113,13 @@ jobs:
         name: mvn_outputs
         path: component_importance_data\DBCP\mvn_outputs
 
+    - name: Upload traces
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: traces
+        path: component_importance_data\DBCP\traces
+
     - name: create zip
       shell: python
       run: | 
