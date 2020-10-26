@@ -97,28 +97,35 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: matrices
-        path: component_importance_data\DBCP\matrices
+        path: component_importance_data\${{github.event.issue.title}}\matrices
 
     - name: Upload traces_json
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: traces_json
-        path: component_importance_data\DBCP\traces_json
+        path: component_importance_data\${{github.event.issue.title}}\traces_json
 
     - name: Upload mvn_outputs
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: mvn_outputs
-        path: component_importance_data\DBCP\mvn_outputs
+        path: component_importance_data\${{github.event.issue.title}}\mvn_outputs
 
     - name: Upload traces
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: traces
-        path: component_importance_data\DBCP\traces
+        path: component_importance_data\${{github.event.issue.title}}\traces
+
+    - name: Upload classification_metrics
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: classification_metrics
+        path: component_importance_data\${{github.event.issue.title}}\classification_metrics
 
     - name: create zip
       shell: python
