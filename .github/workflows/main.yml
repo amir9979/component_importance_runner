@@ -134,7 +134,7 @@ jobs:
         zf = zipfile.ZipFile('data.zip', mode='w', allowZip64 = True)
         list(map(lambda x: list(map(lambda y: zf.write(os.path.join(x[0], y)), x[2])), os.walk('.')))
         zf.close()
-      working-directory: repository_data
+      working-directory: component_importance_data
       
 
     - name: Upload results to release
