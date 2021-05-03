@@ -141,7 +141,7 @@ jobs:
       uses: svenstaro/upload-release-action@v1-release
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: repository_data/data.zip
+        file: component_importance_data/data.zip
         asset_name: ${{github.event.issue.title}}.zip
         tag: ${{github.event.issue.title}}_${{github.event.issue.number}}
 
